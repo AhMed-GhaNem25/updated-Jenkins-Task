@@ -1,16 +1,19 @@
-def gv = script.groovy
+def gv
+
 pipeline {
     agent any
     tools {
-        maven 'Maven-3.6' //from the tools configartion
+        maven 'Maven-3.6' //from the tools configuration
     }
     stages {
         stage("init") {
             steps {
-                gv = load "script.groovy"
+                script {
+                    gv = load "script.groovy"
+                }
             }
         }
-        stage("Bulid jar") {
+        stage("Build jar") {
             steps {
                 script {
                     gv.buildJar()
@@ -22,14 +25,7 @@ pipeline {
                 script {
                     gv.buildImage()
                 }
-        }
-        }
-        stage("deploy app") {
-            steps {
-                script {
-                    gv.deployApp()
-                }
             }
         }
-    }   
+    }
 }
