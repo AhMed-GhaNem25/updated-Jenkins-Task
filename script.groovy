@@ -1,18 +1,19 @@
 def buildJar() {
-    echo "building the application..."
+    echo "building Jar file..."
     sh 'mvn package'
 } 
 
 def buildImage() {
     echo "building the docker image..."
     withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-        sh 'docker build -t Ghanem/demo-app:jma-2.0 .'
-        sh "echo $PASS | docker login -u $USER --password-stdin"
-        sh 'docker push Ghanem/demo-app:jma-2.0'
+    sh 'docker build -t ghanemovic/jenkins-task:jm-2.0 .'
+    sh "echo $PASS | docker login -u $USER --password-stdin"
+    sh 'docker push ghanemovic/jenkins-task:jm-2.0'
     }
 } 
 
-def deployApp() {
+def deployApp() 
+    steps {
     echo 'deploying the application...'
 } 
 
