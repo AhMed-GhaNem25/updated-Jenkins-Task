@@ -12,11 +12,12 @@ def buildImage() {
     }
 } 
 
-def deployApp() 
+def deployApp() {
     steps {
         {
         echo 'deploying the application...'
         }
-} 
+    }
+}
 
 return this
