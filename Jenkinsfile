@@ -7,8 +7,7 @@ pipeline {
     stages {
         stage("init") {
             steps {
-                gv = load "script.groovy"
-                echo "init stage"
+                gv = load("script.groovy")
             }
         }
         stage("Bulid jar") {
