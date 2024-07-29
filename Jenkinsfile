@@ -17,9 +17,10 @@ pipeline {
                 echo "building the docker image..."
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', passwordVariable: 'PASS', usernameVariable: 'USER')])
                 {
-                    sh 'docker build -t ghanemovic/test-app:jev-2.0 .'
+                    sh 'docker build -t ghanemovic/test-app:jmv-2.0 .'
                     sh "echo $PASS | docker login -u $USER --password-stdin"
-                    sh 'docker push ghanemovic/test-app:jev-2.0'
+                    sh 'docker push ghanemovic/jenkins-task:jmv-2.0'
+
             }   
         }
         }
