@@ -14,9 +14,7 @@ def buildImage() {
 
 def deployApp() {
     steps {
-        {
         echo 'deploying the application...'
-        }
     }
 }
 
