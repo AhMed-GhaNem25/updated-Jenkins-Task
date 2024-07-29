@@ -1,4 +1,4 @@
-def gv
+def gv = script.groovy
 pipeline {
     agent any
     tools {
