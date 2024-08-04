@@ -16,6 +16,11 @@ pipeline {
                 }
             }
         }
+                stage("show name") {
+            steps {
+                echo "Hello, it's Ghaneem"
+            }
+        }
         stage("build jar") {
             steps {
                 script {
