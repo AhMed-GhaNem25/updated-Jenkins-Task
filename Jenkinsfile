@@ -6,7 +6,7 @@ def gv
 pipeline {
     agent any
     tools {
-        maven 'Maven-3.6' //from the tools configartion
+        maven 'Maven-3.6' 
     }
     stages {
         stage("init") {
@@ -33,8 +33,7 @@ pipeline {
         stage("deploy") {
             steps {
                 script {
-                    echo "deploying"
-                    //gv.deployApp()
+                    gv.deployApp()
                 }
             }
         }
