@@ -16,7 +16,7 @@ pipeline {
                 }
             }
         }
-                stage("show name") {
+                stage("it's Ghaneem") {
             steps {
                 echo "Hello, it's Ghaneem"
             }
