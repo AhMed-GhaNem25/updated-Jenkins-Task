@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-@library('my-shared-lib')
+@Library('my-shared-lib')_
 
 def gv
 
